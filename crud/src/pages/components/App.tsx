@@ -1,7 +1,7 @@
 import styles from './app.module.css';
 import Notes from './Notes';
 import { useState, useEffect } from 'react';
-import { getNotes, addNotes, deleteNotes } from '@/api/ServerApi';
+import { getPosts, getPostByID, addPost, deletePost, editPost } from '@/api/ServerApi';
 
 
 export interface textInputProp {
@@ -21,14 +21,26 @@ export default function App(): JSX.Element {
   
   
   useEffect( ()=> {
-    getNotes()
+    addPost({content: 'first'})
   .then((response) => {
-    setNotes(response)
+    console.log(response)
     
   })
   }, [])
   
-
+  // useEffect( ()=> {
+  //   deletePost(8)
+  // .then((response) => {
+    
+  // })
+  // }, [])
+  useEffect( ()=> {
+    getPosts()
+  .then((response) => {
+    console.log(response)
+    
+  })
+  }, [])
 
   const [textInput, setTectInput] = useState<textInputProp>({
     value: ''
@@ -42,16 +54,7 @@ export default function App(): JSX.Element {
 
   const addNoteOnCLick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
-  
-    addNotes({
-      content: textInput.value
-    }).then(() =>{
-      getNotes()
-    .then((response) => {
-      setNotes(response)
-
-    })
-    })
+ 
     
   }
 
@@ -59,13 +62,7 @@ export default function App(): JSX.Element {
     event.preventDefault();
   
 
-    deleteNotes(event.target.id).then(()=> {
-      getNotes()
-      .then((response) => {
-        setNotes(response)
-    
-      })
-    })
+  
    
   }
 
@@ -75,11 +72,7 @@ export default function App(): JSX.Element {
   
 
     
-      getNotes()
-      .then((response) => {
-        setNotes(response)
-        console.log(response)
-      })
+     
 
    
   }
