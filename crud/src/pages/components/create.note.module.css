@@ -1,19 +1,38 @@
-.btn {
-    width: 100px;
-    height: 50px;
-    border: 1px solid black;
-    border-radius: 20px;
-}
-.input {
-    width: 400px;
-    height: 200px;
+.description {
+    width: 300px;
+    padding: 20px;
     resize: none;
 }
-.title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.btn_enter {
+    width: 150px;
+    height: 20px;
+    border: none;
+    padding: 15px;
+    background-color: rgba(29, 68, 225, 0.949);
+    color: white;
+    border-radius: 10px;
+
+}
+.btn_close {
+
+    height: 20px;
+    border: none;
+    padding: 15px;
+    background-color: rgba(29, 68, 225, 0.949);
+    color: white;
+    border-radius: 10px;
 }
 .container {
-    position: relative;   
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 400px;
+
+  
+}
+.note_cont {
+    display: flex;
+    flex-direction: row;
+    position: relative;
 }

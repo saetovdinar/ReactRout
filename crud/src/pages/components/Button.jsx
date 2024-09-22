@@ -1,13 +1,8 @@
 import styles from './button.module.css'
 
 
-interface ButtonProps {
-  children: string
-  deleteOnClick(): void
-  styles: React.CSSProperties
-  id: string
-}
-export default function Button(props: ButtonProps ): JSX.Element {
+
+export default function Button(props ) {
 
 
     return (

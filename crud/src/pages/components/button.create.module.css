@@ -1,6 +1,10 @@
 .btn {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
+    width: 150px;
+    height: 20px;
+    margin-top: 10px;
+    border: none;
+    padding: 15px;
+    background-color: rgba(29, 68, 225, 0.949);
+    color: white;
+    border-radius: 10px;
 }
